@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Parametrized Suite">
+    <test name="Parametrized Test 1">
+        <parameter name="userName" value="tomsmith"/>
+        <parameter name="password" value="smt"/>
+        <parameter name="expectedWarning" value="Your password is invalid!"/>
+        <classes>
+            <class name="testng.practice.tests.LoginTests"/>
+        </classes>
+    </test>
+    <test name="Parametrized Test 2">
+        <parameter name="userName" value=""/>
+        <parameter name="password" value=""/>
+        <parameter name="expectedWarning" value="Your username is invalid!"/>
+        <classes>
+            <class name="testng.practice.tests.LoginTests"/>
+        </classes>
+    </test>
+    <test name="Parametrized Test 3">
+        <parameter name="userName" value="smt"/>
+        <parameter name="password" value="SuperSecretPassword!"/>
+        <parameter name="expectedWarning" value="Your username is invalid!"/>
+        <classes>
+            <class name="testng.practice.tests.LoginTests"/>
+        </classes>
+    </test>
+
+</suite>
