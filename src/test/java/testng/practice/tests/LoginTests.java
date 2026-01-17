@@ -2,8 +2,6 @@ package testng.practice.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -23,11 +21,11 @@ public class LoginTests {
         loginPage = new LoginPage(driver);
     }
 
-    @Parameters({"userName","password","expectedWarning"})
+    @Parameters({"userName", "password", "expectedWarning"})
     @Test
     public void shouldFailLogin(String userName, String password, String expectedWarning) {
         loginPage.openPage();
-        loginPage.login(userName,password);
+        loginPage.login(userName, password);
 
         String error = loginPage.getExpectedWarningMessage();
         Assert.assertTrue(error.contains(expectedWarning));

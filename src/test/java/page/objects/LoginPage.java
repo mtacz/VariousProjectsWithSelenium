@@ -24,13 +24,13 @@ public class LoginPage {
         driver.navigate().to("https://theinternet.przyklady.javastart.pl/login");
     }
 
-    public void login(String username, String password){
+    public void login(String username, String password) {
         driver.findElement(userName).sendKeys(username);
         driver.findElement(fieldPassword).sendKeys(password);
         driver.findElement(loginButton).click();
     }
 
-    public String getExpectedWarningMessage(){
+    public String getExpectedWarningMessage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(expectedWarning)).getText();
     }
